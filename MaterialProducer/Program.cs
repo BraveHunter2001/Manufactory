@@ -1,3 +1,4 @@
+using MaterialProducer.Consumers;
 using MaterialProducer.Services;
 
 namespace MaterialProducer
@@ -11,6 +12,9 @@ namespace MaterialProducer
             // Add services to the container.
             builder.Services.AddTransient<IRawMaterialConsumer, RawMaterialConsumer>();
 
+            builder.Services.AddTransient<ICompositionAnalyzerService, CompositionAnalyzerService>();
+            builder.Services.AddTransient<IMaterialProducer, Services.MaterialProducer>();
+
             builder.Services.AddControllers();
 
             var app = builder.Build();
@@ -20,7 +24,6 @@ namespace MaterialProducer
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

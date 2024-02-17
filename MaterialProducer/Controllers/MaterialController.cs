@@ -1,19 +1,18 @@
-﻿using MaterialProducer.Services;
-using Microsoft.AspNetCore.Http;
+﻿using MaterialProducer.DTOs;
+using MaterialProducer.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaterialProducer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MaterialController(IRawMaterialConsumer rawMaterialConsumer) : ControllerBase
+    public class MaterialController(IMaterialProducer materialProducer) : ControllerBase
     {
-
         [HttpGet("diamond")]
-        public IActionResult GetDiamond() 
+        public IActionResult GetDiamond()
         {
-            return Ok(rawMaterialConsumer.ConsumeRawMaterial(DTOs.RawMaterialType.Diamond, 1));
+            var material = materialProducer.Produce(new RawMaterialDto { Type = RawMaterialType.Diamond, Mass = 1 });
+            return Ok(material);
         }
-
     }
 }
