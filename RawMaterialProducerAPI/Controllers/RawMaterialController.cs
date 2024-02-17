@@ -14,7 +14,7 @@ namespace RawMaterialProducer.Controllers
             if (unitModel is null) return BadRequest();
 
             var result = rawMaterialProducer.ProduceUnit(unitModel.RawMaterialType, unitModel.Mass);
-            return Ok(new RawMaterialUnitViewModel(result));
+            return Ok(result);
         }
     }
 }
