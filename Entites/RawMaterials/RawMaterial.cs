@@ -1,10 +1,11 @@
-﻿namespace Entites.RawMaterials;
+﻿namespace Entities.RawMaterials;
 
 /// <summary>
 /// Сырье 
 /// </summary>
-public class RawMaterial
+public class RawMaterialUnit
 {
+    public int Id { get; set; }
     public RawMaterialType Type { get; set; }
     public int Mass { get; set; }
 }
