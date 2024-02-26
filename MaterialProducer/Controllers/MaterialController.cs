@@ -14,5 +14,12 @@ namespace MaterialProducer.Controllers
             var material = materialProducer.Produce(new RawMaterialDto { Type = RawMaterialType.Diamond, Mass = 1 });
             return Ok(material);
         }
+
+        [HttpGet("produceUnit")]
+        public IActionResult GetMaterialUnit([FromBody] MaterialRequestDTO materialRequest)
+        {
+            var material = materialProducer.Produce(materialRequest);
+            return Ok(material);
+        }
     }
 }

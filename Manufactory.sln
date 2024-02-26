@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialProducer", "Materia
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RawMaterialProducer", "RawMaterialProducer\RawMaterialProducer.csproj", "{F01671AA-6186-409D-AEE1-3694D131AC71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{CE699B37-8683-4507-9B1E-10AC0419DC85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssembler", "ProductAssembler\ProductAssembler.csproj", "{BA542D07-7106-4C81-AEA2-DDD716CCE0B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F01671AA-6186-409D-AEE1-3694D131AC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F01671AA-6186-409D-AEE1-3694D131AC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F01671AA-6186-409D-AEE1-3694D131AC71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE699B37-8683-4507-9B1E-10AC0419DC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE699B37-8683-4507-9B1E-10AC0419DC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE699B37-8683-4507-9B1E-10AC0419DC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE699B37-8683-4507-9B1E-10AC0419DC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA542D07-7106-4C81-AEA2-DDD716CCE0B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA542D07-7106-4C81-AEA2-DDD716CCE0B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA542D07-7106-4C81-AEA2-DDD716CCE0B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA542D07-7106-4C81-AEA2-DDD716CCE0B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

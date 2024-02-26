@@ -12,5 +12,6 @@ public class RawMaterialDto
 
 public enum RawMaterialType
 {
-    Diamond
+    Diamond,
+    Gold
 }

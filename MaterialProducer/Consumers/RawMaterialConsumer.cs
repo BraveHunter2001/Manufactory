@@ -1,5 +1,5 @@
-﻿using MaterialProducer.DTOs;
-using RestSharp;
+﻿using Core;
+using MaterialProducer.DTOs;
 
 namespace MaterialProducer.Consumers;
 
@@ -8,17 +8,14 @@ public interface IRawMaterialConsumer
     RawMaterialDto Consume(RawMaterialType type, int mass);
 }
 
-public class RawMaterialConsumer : IRawMaterialConsumer
+public class RawMaterialConsumer : Consumer, IRawMaterialConsumer
 {
-    private const string _rawMaterialProducerUrl = "http://localhost:5118/api";
-    private static readonly RestClientOptions _options = new(_rawMaterialProducerUrl);
+    public override string ConsumerURL => "http://localhost:5118/api";
+    private const string _processedUnit = "rawMaterial/produceUnit";
 
     public RawMaterialDto Consume(RawMaterialType type, int mass)
     {
-        var client = new RestClient(_options);
-        var request = new RestRequest("rawMaterial/produceUnit").AddJsonBody(new { Type = type, Mass = mass });
-
-        var response = client.Get<RawMaterialDto>(request);
+        var response = SendRequestAsync<RawMaterialDto, RawMaterialDto>(new() { Type = type, Mass = mass }, _processedUnit).Result;
         return response;
     }
 }

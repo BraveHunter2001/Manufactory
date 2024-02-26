@@ -16,5 +16,6 @@ public class RawMaterialUnit
 /// </summary>
 public enum RawMaterialType
 {
-    Diamond
+    Diamond,
+    Gold
 }
